@@ -1,17 +1,7 @@
 @font-face {
-    font-family: AvenirLTStd-Book;
-    src: url("https://cdn.protograph.pykih.com/lib/AvenirLTStd-Book.otf") format("opentype");
-  }
-  
-  @font-face {
     font-family: AvenirLTStd-Medium;
     src: url("https://cdn.protograph.pykih.com/lib/AvenirLTStd-Medium.otf") format("opentype");
-  }
-  
-  @font-face {
-    font-family: Avenir-Bold;
-    src: url("https://cdn.protograph.pykih.com/lib/AEH.ttf") format("opentype");
-  }
+}
 
 body {
     min-width: initial !important;
@@ -46,7 +36,7 @@ a {
 }
 
 .dte-case-card {
-    width: 540px;
+    width: 100%;
     display: inline-block;
     position: relative;
     box-sizing: border-box;
@@ -73,14 +63,13 @@ a {
     float: right;
 }
 
-.dte-case-card .card-content .card-status {
+.dte-case-card .card-content-div .card-status {
     margin: 2px 10px 2px 2px;
     float: left;
 }
 
 .dte-case-card .card-status-button {
     border-radius: 7px;
-    display: inline-block;
     height: 14px;
     width: 14px;
   }
@@ -108,7 +97,6 @@ a {
 }
 
 .dte-case-card .card-tabs {
-    width: 509px;
     margin-top: 16px;
     border-bottom: 1px solid #dddddd;
     margin-bottom: 16px;
@@ -139,13 +127,16 @@ a {
     overflow: -moz-scrollbars-none;
 }
 
-.dte-case-card .divider {
-    width: 506px;
+.protograph-col7-mode .dte-case-card .divider {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px; 
     margin: 0px auto 10px auto;
     border-bottom: 1px solid #dddddd;
     overflow: hidden;
 
 }
+
 .dte-case-card .card-content-div {
     position: relative;
     height: 100%;
@@ -178,10 +169,11 @@ a {
     margin-bottom: 4px;
 }
 
-.dte-case-card .vertical-divider {
+.protograph-col7-mode .dte-case-card .vertical-divider {
     border-left: 1px solid #dddddd;
     padding-left: 16px;
 }
+
 .dte-case-card .card-footer {
     height: 45px;
     /* border-top: 1px solid #dddddd; */
@@ -190,7 +182,6 @@ a {
     bottom: 0px;
     left: 0px;
     padding: 4px 16px;
-    width: 539px;
     box-sizing: border-box;
 }
 
@@ -199,26 +190,10 @@ a {
     margin-top: 10px;
 }
 
-.dte-case-card .call-to-action-button {
-    font-size: 12px;
-    color: white;
-    background: #f7230f;
-    padding: 6px 10px;
-    box-sizing: border-box;
-    float: right;
-    margin-top: 2px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-}
-
-.dte-case-card .half-width-parameter {
+.protograph-col7-mode  .dte-case-card .half-width-parameter {
     width: 50%;
     display: inline-block;
     overflow: hidden;
-}
-
-.dte-case-card .half-width-parameter p {
-    width: 240px;
 }
 
 .dte-case-card .single-parameter {
@@ -227,7 +202,7 @@ a {
     display: inline-block;
 }
 
-.dte-case-card .content-footer {
+.protograph-col7-mode  .dte-case-card .content-footer {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -242,39 +217,16 @@ a:active {
     color: yelow;
 }
 
-.dte-case-card-mobile {
-    width: 300px;
-    height: 430px;
-}
-
-.dte-case-card-mobile .tabContent .card-tabs-mobile {
-    width: 270px;
-    margin-left: 0px
-}
-
 .dte-case-card-mobile .tabContent .card-tabs-mobile .single-tab-mobile {
     width: 65px;
     font-size: 10px;
 }
 
-.dte-case-card-mobile .call-to-action-button-mobile {
-    font-size: 10px;
-}
-
-.dte-case-card-mobile .card-footer-mobile {
-    width: 300px;
-}
-
-.dte-case-card-mobile .tabContent .tab-content {
-    width: 280px;
-}
-
 .tabContent {
-    height: 370px;
+    height: 340px;
     overflow-y: scroll;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
-    width: 280px;
 }
 
 .tabContent::-webkit-scrollbar {
@@ -286,9 +238,6 @@ a:active {
     color: #525252;
     margin: 0px;
     padding: 0px;
-    line-height: 21px;
-    margin-bottom: 8px;
-    width: 280px;
 }
 
 
