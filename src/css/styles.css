@@ -121,17 +121,17 @@ a {
 }
 
 .card-content {
-    height: 361px;
+    height: 360px;
     overflow-y: scroll;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
 }
 
-.protograph-col7-mode .dte-case-card .divider {
+ .dte-case-card .divider {
     width: 100%;
     padding-left: 16px;
     padding-right: 16px; 
-    margin: 0px auto 10px auto;
+    margin: 10px auto;
     border-bottom: 1px solid #dddddd;
     overflow: hidden;
 

@@ -147,7 +147,7 @@ export default class toCard extends React.Component {
                   <p>{data.respondent} ({data.respondent_type})</p>
                 </div>
               </div>
-              <div className="divider" />
+              <div className="divider"/>
               <div className="half-width-parameter">
                   <div className="single-parameter">
                     <div className="parameter-label">DISPOSITION</div>
