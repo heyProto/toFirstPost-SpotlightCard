@@ -129,9 +129,7 @@ a {
 
  .dte-case-card .divider {
     width: 100%;
-    padding-left: 16px;
-    padding-right: 16px; 
-    margin: 10px auto;
+    margin: 12px auto;
     border-bottom: 1px solid #dddddd;
     overflow: hidden;
 
@@ -159,7 +157,7 @@ a {
     font-size: 10px;
     text-transform: uppercase;
     color: #9a9a9a;
-    /* margin-bottom: 2px; */
+    margin-bottom: 2px;
 }
 
 .dte-case-card .parameter-small-label {
@@ -193,26 +191,25 @@ a {
 
 .protograph-col7-mode  .dte-case-card .half-width-parameter {
     vertical-align: top;
-    width: 50%;
+    width: 48%;
     display: inline-block;
     overflow: hidden;
 }
 
 .dte-case-card .single-parameter {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     width: 100%;
     display: inline-block;
 }
 
 .protograph-col7-mode  .dte-case-card .content-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    
     margin-bottom: 20px;
 }
 
 .dte-case-card a {
     color: #0F62C4 !important;
+    font-size: 14px;
 }
 
 a:active {
