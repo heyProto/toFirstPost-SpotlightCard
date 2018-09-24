@@ -193,7 +193,7 @@ export default class toCard extends React.Component {
                 <div className={`card-status-button ${this.getCardStatus(data.status)}`} />
               </div>
             </div>
-            <div className="card-title">{data.title}</div>
+            <div className="card-title">{data.title.length > 150 ? data.title.substr(0,data.title.indexOf(" ",183)) + '...' : data.title}</div>
             <div className="card-tabs">{this.renderTabs()}</div>
             <div className="card-content">
               {this.renderTabContent(this.state.activeCounter)}
@@ -215,19 +215,23 @@ export default class toCard extends React.Component {
       return (
         <div className="protograph-col4-mode">
           <div className="dte-card dte-card-mobile">
-            <div className="tabContent">
-            <div className="card-title card-title-mobile">{data.name_of_conflict}</div>
-              <div className="card-tabs card-tabs-mobile">
-              {this.renderTabs()}  
+            <div className="card-header">
+              <div className="card-date">{new Date(data.date).toLocaleDateString("en-US", {year: 'numeric', month: 'short', day: 'numeric'})}</div>
+              <div className="card-status">
+                <div className={`card-status-button ${this.getCardStatus(data.status)}`} />
               </div>
+            </div>
+            <div className="tabContent">
+              <div className="card-title card-title-mobile">{data.title.length > 150 ? data.title.substr(0,data.title.indexOf(" ",183)) + '...' : data.title}</div>
+              <div className="card-tabs card-tabs-mobile">{this.renderTabs()}</div>
               <div className="tab-content">
                   {this.renderTabContent(this.state.activeCounter)}
               </div>
             </div>  
-              <div className="card-footer card-footer-mobile">
-                <img src={'https://cdn.protograph.pykih.com/Assets/proto-cards/dte-logo.png'}/>
-              </div>
-            </div>         
+            <div className="card-footer card-footer-mobile">
+              <img src={'https://cdn.protograph.pykih.com/Assets/proto-cards/dte-logo.png'}/>
+            </div>
+          </div>         
         </div>
       )
     }
