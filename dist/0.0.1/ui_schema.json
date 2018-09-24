@@ -1,0 +1,28 @@
+{
+  "data": {
+    "name_of_conflict": {
+      "ui:widget": "textarea"
+    },
+    "nature_of_land_conflict": {
+        "ui:widget": "dropdown"
+    },
+    "no_of_household_affected": {
+      "ui:widget": "range"
+    },
+    "investment": {
+      "ui:widget": "updown"
+    },
+    "land_area_affected": {
+      "ui:widget": "updown"
+    },
+    "summary": {
+      "ui:widget": "textarea",
+      "ui:options": {
+        "rows": "15"
+      }
+    },
+    "source_of_information": {
+      "ui:widget": "textarea"
+    }
+  }
+}

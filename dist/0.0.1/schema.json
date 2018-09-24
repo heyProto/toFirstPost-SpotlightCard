@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "id": "http://example.com/example.json",
+  "type": "object",
+  "properties": {
+    "data": {
+      "id": "/properties/data",
+      "properties": {
+        "name_of_conflict": {
+          "id": "/properties/data/properties/name_of_conflict",
+          "type": "string",
+          "title": "Name of Conflict"
+        },
+        "nature_of_land_conflict": {
+          "id": "/properties/data/properties/nature_of_land_conflict",
+          "type": "array",
+          "items": {
+            "type":"string",
+            "enum":[
+              "Conservation/forestry", 
+              "Encroachment by non-right holders",
+              "Ethnic/communal conflicts",
+              "Industry",
+              "Infrastructure",
+              "Land acquisition by government ",
+              "Land ceiling laws",
+              "Mining",
+              "Natural calamities",
+              "non-settlement or violation of Forest Rights Act",
+              "Rehabilitation of displaced people",
+              "Urban development",
+              "Forced eviction",
+              "Inter-community conflict over resources "
+            ]
+          },
+          
+          "title": "Reasons/Nature of Land Conflict"
+        },
+        "village": {
+          "id": "/properties/data/properties/village",
+          "type": "string",
+          "title": "Village/Town"
+        },
+        "district": {
+          "id": "/properties/data/properties/district",
+          "type": "string",
+          "title": "District"
+        },
+        "state": {
+          "id": "/properties/data/properties/state",
+          "type": "string",
+          "title": "State"
+        },"industry": {
+          "id": "/properties/data/properties/industry",
+          "type": "string",
+          "title": "Industry/Sector",
+          "enum": ["Industry", "Infrastructure", "Land Use", "Mining", "Conservation/Forestry", "Power"]
+        },
+        "type_of_industry": {
+          "id": "/properties/data/properties/type_of_industry",
+          "type": "string",
+          "title": "Sector/Type of Industry"
+        },
+        "no_of_household_affected": {
+          "id": "/properties/data/properties/no_of_household_affected",
+          "type": "integer",
+          "title": "No. of Household affected"
+        },
+        "investment": {
+          "id": "/properties/data/properties/investment",
+          "type": "number",
+          "title": "Investment(in crores, Rs.)"
+        },
+        "land_area_affected": {
+          "id": "/properties/data/properties/land_area_affected",
+          "type": "number",
+          "title": "Land Area Affected"
+        },
+        "year": {
+          "id": "/properties/data/properties/year",
+          "type": "string",
+          "title": "Starting Year"
+        },
+        "parties_involved_state": {
+          "id": "/properties/data/properties/parties_involved_state",
+          "type": "string",
+          "title": "Parties Involved (State)"
+        },
+        "parties_involved_corporate": {
+          "id": "/properties/data/properties/parties_involved_corporate",
+          "type": "string",
+          "title": "Parties Involved (Corporate)"
+        },
+        "parties_involved_local": {
+          "id": "/properties/data/properties/parties_involved_local",
+          "type": "string",
+          "title": "Parties Involved Community/Local organisations"
+        },
+        "parties_involved_others": {
+          "id": "/properties/data/properties/parties_involved_others",
+          "type": "string",
+          "title": "Parties Involved (Others)"
+        },
+        "type_of_land": {
+          "id": "/properties/data/properties/type_of_land",
+          "type": "string",
+          "title": "Type of Land"
+        },
+        "type_of_common_land": {
+          "id": "/properties/data/properties/type_of_common_land",
+          "type": "string",
+          "title": "Type of Common Land"
+        },
+        "major_human_rights_violation_related_to_conflict": {
+          "id": "/properties/data/properties/major_human_rights_violation_related_to_conflict",
+          "type": "string",
+          "title": "Major Human Rights Violations related to the conflict"
+        },
+        "summary": {
+          "id": "/properties/data/properties/summary",
+          "type": "string",
+          "title": "Summary"
+        },
+        "links": {
+          "id": "/properties/data/properties/links",
+          "type": "string",
+          "title": "Links"
+        },
+        "source_of_information": {
+          "id": "/properties/data/properties/source_of_information",
+          "type": "string",
+          "title": "Source of Information"
+        }
+      },
+      "title": "Card Data",
+      "type": "object"
+    }
+  }
+}
