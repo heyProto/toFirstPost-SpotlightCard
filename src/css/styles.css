@@ -192,6 +192,7 @@ a {
 }
 
 .protograph-col7-mode  .dte-case-card .half-width-parameter {
+    vertical-align: top;
     width: 50%;
     display: inline-block;
     overflow: hidden;
@@ -227,7 +228,6 @@ a:active {
     height: 340px;
     overflow-y: scroll;
     -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
 }
 
 .tabContent::-webkit-scrollbar {

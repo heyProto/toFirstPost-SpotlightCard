@@ -140,11 +140,11 @@ export default class toCard extends React.Component {
               <div className="half-width-parameter vertical-divider">
                 <div className="single-parameter">
                   <div className="parameter-label">PETITIONER (TYPE)</div>
-                  <p>{data.petition_type}</p>
+                  <p>{data.petitioner} ({data.petition_type})</p>
                 </div>
                 <div className="single-parameter">
                   <div className="parameter-label">RESPONDENT (TYPE)</div>
-                  <p>{data.respondent_type}</p>
+                  <p>{data.respondent} ({data.respondent_type})</p>
                 </div>
               </div>
               <div className="divider" />
