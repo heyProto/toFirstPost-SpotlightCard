@@ -1,140 +1,217 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {},
-  "id": "http://example.com/example.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
   "type": "object",
+  "required": [
+    "data"
+  ],
   "properties": {
     "data": {
-      "id": "/properties/data",
+      "$id": "#/properties/data",
+      "type": "object",
+      "title": "DTE Case Details",
+      "required": [
+        "date",
+        "subject",
+        "location",
+        "court_involved",
+        "title",
+        "petitioner",
+        "petition_type",
+        "respondent",
+        "respondent_type",
+        "petition_filing_year",
+        "petition_result",
+        "judge_name",
+        "bench",
+        "act_referred",
+        "summary",
+        "compensation",
+        "case_status",
+        "pdf_url"
+      ],
       "properties": {
-        "name_of_conflict": {
-          "id": "/properties/data/properties/name_of_conflict",
+        "date": {
+          "$id": "#/properties/data/properties/date",
           "type": "string",
-          "title": "Name of Conflict"
+          "title": "Last Updated Date",
+          "default": "",
+          "examples": [
+            "2013-05-20"
+          ],
+          "pattern": "^(.*)$"
         },
-        "nature_of_land_conflict": {
-          "id": "/properties/data/properties/nature_of_land_conflict",
-          "type": "array",
-          "items": {
-            "type":"string",
-            "enum":[
-              "Conservation/forestry", 
-              "Encroachment by non-right holders",
-              "Ethnic/communal conflicts",
-              "Industry",
-              "Infrastructure",
-              "Land acquisition by government ",
-              "Land ceiling laws",
-              "Mining",
-              "Natural calamities",
-              "non-settlement or violation of Forest Rights Act",
-              "Rehabilitation of displaced people",
-              "Urban development",
-              "Forced eviction",
-              "Inter-community conflict over resources "
-            ]
-          },
-          
-          "title": "Reasons/Nature of Land Conflict"
-        },
-        "village": {
-          "id": "/properties/data/properties/village",
+        "subject": {
+          "$id": "#/properties/data/properties/subject",
           "type": "string",
-          "title": "Village/Town"
+          "title": "Subject",
+          "default": "",
+          "examples": [
+            "Forests"
+          ],
+          "pattern": "^(.*)$"
         },
-        "district": {
-          "id": "/properties/data/properties/district",
+        "location": {
+          "$id": "#/properties/data/properties/location",
           "type": "string",
-          "title": "District"
+          "title": "Location",
+          "default": "",
+          "examples": [
+            "Himachal Pradesh"
+          ],
+          "pattern": "^(.*)$"
         },
-        "state": {
-          "id": "/properties/data/properties/state",
+        "court_involved": {
+          "$id": "#/properties/data/properties/court_involved",
           "type": "string",
-          "title": "State"
-        },"industry": {
-          "id": "/properties/data/properties/industry",
-          "type": "string",
-          "title": "Industry/Sector",
-          "enum": ["Industry", "Infrastructure", "Land Use", "Mining", "Conservation/Forestry", "Power"]
+          "title": "Court involved",
+          "default": "",
+          "examples": [
+            "National Green Tribunal (NGT)"
+          ],
+          "pattern": "^(.*)$"
         },
-        "type_of_industry": {
-          "id": "/properties/data/properties/type_of_industry",
+        "title": {
+          "$id": "#/properties/data/properties/title",
           "type": "string",
-          "title": "Sector/Type of Industry"
+          "title": "Title",
+          "default": "",
+          "examples": [
+            "Order of the National Green Tribunal in the matter of Shobha Dhalla Vs. State of Uttrakhand & Ors regarding construction activity in the area around Kapurthala Estate or the Savoy Hotel which have been declared as forest area"
+          ],
+          "pattern": "^(.*)$"
         },
-        "no_of_household_affected": {
-          "id": "/properties/data/properties/no_of_household_affected",
+        "petitioner": {
+          "$id": "#/properties/data/properties/petitioner",
+          "type": "string",
+          "title": "Petitioner",
+          "default": "",
+          "examples": [
+            "Shobha Dhalla"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "petition_type": {
+          "$id": "#/properties/data/properties/petition_type",
+          "type": "string",
+          "title": "Petitioner type",
+          "default": "",
+          "examples": [
+            "Individual"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "respondent": {
+          "$id": "#/properties/data/properties/respondent",
+          "type": "string",
+          "title": "Respondent",
+          "default": "",
+          "examples": [
+            "State of Uttrakhand & Others"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "respondent_type": {
+          "$id": "#/properties/data/properties/respondent_type",
+          "type": "string",
+          "title": "Respondent type",
+          "default": "",
+          "examples": [
+            "Government"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "petition_filing_year": {
+          "$id": "#/properties/data/properties/petition_filing_year",
           "type": "integer",
-          "title": "No. of Household affected"
+          "title": "Petition filing year",
+          "default": 0,
+          "examples": [
+            2013
+          ]
         },
-        "investment": {
-          "id": "/properties/data/properties/investment",
-          "type": "number",
-          "title": "Investment(in crores, Rs.)"
-        },
-        "land_area_affected": {
-          "id": "/properties/data/properties/land_area_affected",
-          "type": "number",
-          "title": "Land Area Affected"
-        },
-        "year": {
-          "id": "/properties/data/properties/year",
+        "petition_result": {
+          "$id": "#/properties/data/properties/petition_result",
           "type": "string",
-          "title": "Starting Year"
+          "title": "Petition result (Disposition)",
+          "default": "",
+          "examples": [
+            "In favour of the petitioner"
+          ],
+          "pattern": "^(.*)$"
         },
-        "parties_involved_state": {
-          "id": "/properties/data/properties/parties_involved_state",
+        "judge_name": {
+          "$id": "#/properties/data/properties/judge_name",
           "type": "string",
-          "title": "Parties Involved (State)"
+          "title": "Judge name",
+          "default": "",
+          "examples": [
+            "Swatanter Kumar, U. D. Salvi"
+          ],
+          "pattern": "^(.*)$"
         },
-        "parties_involved_corporate": {
-          "id": "/properties/data/properties/parties_involved_corporate",
+        "bench": {
+          "$id": "#/properties/data/properties/bench",
           "type": "string",
-          "title": "Parties Involved (Corporate)"
+          "title": "Bench",
+          "default": "",
+          "examples": [
+            "Principal Bench - New Delhi"
+          ],
+          "pattern": "^(.*)$"
         },
-        "parties_involved_local": {
-          "id": "/properties/data/properties/parties_involved_local",
+        "act_referred": {
+          "$id": "#/properties/data/properties/act_referred",
           "type": "string",
-          "title": "Parties Involved Community/Local organisations"
-        },
-        "parties_involved_others": {
-          "id": "/properties/data/properties/parties_involved_others",
-          "type": "string",
-          "title": "Parties Involved (Others)"
-        },
-        "type_of_land": {
-          "id": "/properties/data/properties/type_of_land",
-          "type": "string",
-          "title": "Type of Land"
-        },
-        "type_of_common_land": {
-          "id": "/properties/data/properties/type_of_common_land",
-          "type": "string",
-          "title": "Type of Common Land"
-        },
-        "major_human_rights_violation_related_to_conflict": {
-          "id": "/properties/data/properties/major_human_rights_violation_related_to_conflict",
-          "type": "string",
-          "title": "Major Human Rights Violations related to the conflict"
+          "title": "Act referred",
+          "default": "",
+          "examples": [
+            "Urban Planning and Development Act, Protection of Tree Act, Indian Forest Act"
+          ],
+          "pattern": "^(.*)$"
         },
         "summary": {
-          "id": "/properties/data/properties/summary",
+          "$id": "#/properties/data/properties/summary",
           "type": "string",
-          "title": "Summary"
+          "title": "Summary",
+          "default": "",
+          "examples": [
+            "Order of the National Green Tribunal in the matter of Shobha Dhalla Vs. State of Uttrakhand & Ors regarding construction activity in the area around Kapurthala Estate or the Savoy Hotel which have been declared as forest area"
+          ],
+          "pattern": "^(.*)$"
         },
-        "links": {
-          "id": "/properties/data/properties/links",
+        "compensation": {
+          "$id": "#/properties/data/properties/compensation",
           "type": "string",
-          "title": "Links"
+          "title": "Compensation/Fine",
+          "default": "",
+          "examples": [
+            ""
+          ],
+          "pattern": "^(.*)$"
         },
-        "source_of_information": {
-          "id": "/properties/data/properties/source_of_information",
+        "case_status": {
+          "$id": "#/properties/data/properties/case_status",
           "type": "string",
-          "title": "Source of Information"
+          "title": "Case status",
+          "default": "",
+          "examples": [
+            "Next Hearing 15/07/2013"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "pdf_url": {
+          "$id": "#/properties/data/properties/pdf_url",
+          "type": "string",
+          "title": "PDF link",
+          "default": "",
+          "examples": [
+            "http://www.indiaenvironmentportal.org.in/files/bio-medical%20waste%20Andhra%20Pradesh%20NGT%20Judgement.pdf"
+          ],
+          "pattern": "^(.*)$"
         }
-      },
-      "title": "Card Data",
-      "type": "object"
+      }
     }
   }
 }
