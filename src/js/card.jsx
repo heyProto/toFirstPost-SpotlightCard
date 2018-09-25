@@ -80,15 +80,14 @@ export default class toCard extends React.Component {
     switch(tab){
       case 1:
         return(
-            <div className="card-content-div">  
+            <div className="card-content-div">
+            <div>  
               <div className="single-parameter">
                   <p>{data.summary}</p>
               </div>
               <div className="single-parameter">
                 <div className="parameter-label">CASE STATUS</div>
-                <div className="card-status">
-                  <div className={`card-status-button ${this.getCardStatus(data.case_status)}`} />
-                </div>
+                <div className={`card-status ${this.getCardStatus(data.case_status)}`} />
                 <p>{data.case_status}</p>
               </div>
               <div className="divider" />
@@ -111,6 +110,7 @@ export default class toCard extends React.Component {
                   <div className="parameter-label">PETITION FILING YEAR</div>
                   <p>{data.petition_filing_year}</p>
                 </div>
+              </div>
               </div>
               <div className="single-parameter content-footer">
                 <a href={data.pdf_url} target="_blank">Case file - PDF</a>
@@ -200,10 +200,8 @@ export default class toCard extends React.Component {
         <div className="protograph-col7-mode">
           <div className="dte-case-card">
             <div className="card-header">
-              <div className="card-date">{new Date(data.date).toLocaleDateString("en-US", {year: 'numeric', month: 'short', day: 'numeric'})}</div>
-              <div className="card-status">
-                <div className={`card-status-button ${this.getCardStatus(data.case_status)}`} />
-              </div>
+              <div className={`card-status ${this.getCardStatus(data.case_status)}`} />
+              <div className="card-date">{data.date? new Date(data.date).toLocaleDateString("en-US", {year: 'numeric', month: 'short', day: 'numeric'}) : "Date: Unknown"}</div>
             </div>
             <div className="card-title">{data.title.length > 150 ? data.title.substr(0,data.title.indexOf(" ",150)) + ' ...' : data.title}</div>
             <div className="card-tabs">{this.renderTabs()}</div>
@@ -227,11 +225,9 @@ export default class toCard extends React.Component {
       return (
         <div className="protograph-col4-mode">
           <div className="dte-case-card dte-case-card-mobile">
-            <div className="card-header">
-              <div className="card-date">{new Date(data.date).toLocaleDateString("en-US", {year: 'numeric', month: 'short', day: 'numeric'})}</div>
-              <div className="card-status">
-                <div className={`card-status-button ${this.getCardStatus(data.case_status)}`} />
-              </div>
+          <div className="card-header">
+              <div className={`card-status ${this.getCardStatus(data.case_status)}`} />
+              <div className="card-date">{data.date? new Date(data.date).toLocaleDateString("en-US", {year: 'numeric', month: 'short', day: 'numeric'}) : "Date: Unknown"}</div>
             </div>
             <div className="card-title card-title-mobile">{data.title.length > 150 ? data.title.substr(0,data.title.indexOf(" ",150)) + ' ...' : data.title}</div>
             <div className="card-tabs card-tabs-mobile">{this.renderTabs()}</div>
