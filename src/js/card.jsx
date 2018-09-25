@@ -57,7 +57,6 @@ export default class toCard extends React.Component {
     }
   }
 
-
   selectTab(tab){
     this.setState({activeCounter:tab+1});
   }
@@ -88,7 +87,7 @@ export default class toCard extends React.Component {
               <div className="single-parameter">
                 <div className="parameter-label">CASE STATUS</div>
                 <div className="card-status">
-                  <div className={`card-status-button ${this.getCardStatus(data.status)}`} />
+                  <div className={`card-status-button ${this.getCardStatus(data.case_status)}`} />
                 </div>
                 <p>{data.case_status}</p>
               </div>
@@ -169,7 +168,20 @@ export default class toCard extends React.Component {
 
   }
 
-  getCardStatus(status) {
+  getCardStatus(status, defaultValue = '') {
+
+    if(status) {
+      if (status.toLowerCase().match(/dismissed/g))
+          status = "Cancelled";
+      else if (status.toLowerCase().match(/disposed|judgement/g))
+          status = "Done";
+      else if (status.match(/\d{2}\/\d{2}\/\d{4}/g))
+          status = "Ongoing";
+      else status = defaultValue;
+    } else {
+        status = defaultValue;
+    }
+
     switch(status) {
       case "Cancelled": return "proto-card-status-cancel";
       case "Ongoing": return "proto-card-status-ongoing";
@@ -190,7 +202,7 @@ export default class toCard extends React.Component {
             <div className="card-header">
               <div className="card-date">{new Date(data.date).toLocaleDateString("en-US", {year: 'numeric', month: 'short', day: 'numeric'})}</div>
               <div className="card-status">
-                <div className={`card-status-button ${this.getCardStatus(data.status)}`} />
+                <div className={`card-status-button ${this.getCardStatus(data.case_status)}`} />
               </div>
             </div>
             <div className="card-title">{data.title.length > 150 ? data.title.substr(0,data.title.indexOf(" ",150)) + ' ...' : data.title}</div>
@@ -218,7 +230,7 @@ export default class toCard extends React.Component {
             <div className="card-header">
               <div className="card-date">{new Date(data.date).toLocaleDateString("en-US", {year: 'numeric', month: 'short', day: 'numeric'})}</div>
               <div className="card-status">
-                <div className={`card-status-button ${this.getCardStatus(data.status)}`} />
+                <div className={`card-status-button ${this.getCardStatus(data.case_status)}`} />
               </div>
             </div>
             <div className="card-title card-title-mobile">{data.title.length > 150 ? data.title.substr(0,data.title.indexOf(" ",150)) + ' ...' : data.title}</div>
