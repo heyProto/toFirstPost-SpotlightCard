@@ -88,32 +88,32 @@ export default class toCard extends React.Component {
               <div className="single-parameter">
                 <div className="parameter-label">CASE STATUS</div>
                 <div className={`card-status ${this.getCardStatus(data.case_status)}`} />
-                <p>{data.case_status}</p>
+                <p>{data.case_status ? data.case_status : 'Not available'}</p>
               </div>
               <div className="divider" />
               <div className="half-width-parameter">
                 <div className="single-parameter">
                   <div className="parameter-label">SUBJECT</div>
-                  <p>{data.subject}</p>
+                  <p>{data.subject ? data.subject : 'Not available'}</p>
                 </div>
                 <div className="single-parameter">
                   <div className="parameter-label">LOCATION</div>
-                  <p>{data.location}</p>
+                  <p>{data.location ? data.location : 'Not available'}</p>
                 </div>
               </div>
               <div className="half-width-parameter">
                 <div className="single-parameter">
                   <div className="parameter-label">COURT INVOLVED</div>
-                  <p>{data.court_involved}</p>
+                  <p>{data.court_involved ? data.court_involved : 'Not available'}</p>
                 </div>
                 <div className="single-parameter">
                   <div className="parameter-label">PETITION FILING YEAR</div>
-                  <p>{data.petition_filing_year}</p>
+                  <p>{data.petition_filing_year ? data.petition_filing_year : 'Not available'}</p>
                 </div>
               </div>
               </div>
               <div className="single-parameter content-footer">
-                <a href={data.pdf_url} target="_blank">Case file - PDF</a>
+                {data.pdf_url && <a href={data.pdf_url} target="_blank">Case file - PDF</a>}
               </div>
             </div>
         )
@@ -123,44 +123,44 @@ export default class toCard extends React.Component {
             <div className="card-content-div">
               <div className="single-parameter">
                   <div className="parameter-label">ACT REFERRED</div>
-                  <p>{data.act_referred}</p>
+                  <p>{data.act_referred ? data.act_referred : 'Not available'}</p>
               </div>
               <div className="divider" />
               <div className="half-width-parameter">
                 <div className="single-parameter">
                   <div className="parameter-label">JUDGE</div>
-                  <p>{data.judge_name}</p>
+                  <p>{data.judge_name ? data.judge_name : 'Not available'}</p>
                 </div>
                 <div className="single-parameter">
                   <div className="parameter-label">BENCH</div>
-                  <p>{data.bench}</p>
+                  <p>{data.bench ? data.bench : 'Not available'}</p>
                 </div>
               </div>
               <div className="half-width-parameter vertical-divider">
                 <div className="single-parameter">
                   <div className="parameter-label">PETITIONER (TYPE)</div>
-                  <p>{data.petitioner} ({data.petition_type})</p>
+                  <p>{data.petitioner ? data.petitioner : 'Not available'} {data.petition_type ? '(' + data.petition_type + ')' : ''}</p>
                 </div>
                 <div className="single-parameter">
                   <div className="parameter-label">RESPONDENT (TYPE)</div>
-                  <p>{data.respondent} ({data.respondent_type})</p>
+                  <p>{data.respondent ? data.respondent : 'Not available'} {data.respondent_type ? '(' + data.respondent_type + ')' : ''}</p>
                 </div>
               </div>
               <div className="divider"/>
               <div className="half-width-parameter">
                   <div className="single-parameter">
                     <div className="parameter-label">DISPOSITION</div>
-                    <p>{data.petition_result}</p>
+                    <p>{data.petition_result ? data.petition_result : 'Not available'}</p>
                   </div>
               </div>
               {data.compensation && <div className="half-width-parameter">
                   <div className="single-parameter">
                     <div className="parameter-label">COMPENSATION/FINE</div>
-                    <p>{data.compensation}</p>
+                    <p>{data.compensation ? data.compensation : 'Not available'}</p>
                   </div>
               </div>}
               <div className="single-parameter content-footer">
-                <a href={data.pdf_url} target="_blank">Case file - PDF</a>
+                {data.pdf_url && <a href={data.pdf_url} target="_blank">Case file - PDF</a>}
               </div>
             </div>
         ) 
@@ -170,22 +170,25 @@ export default class toCard extends React.Component {
 
   getCardStatus(status, defaultValue = '') {
 
-    if(status) {
-      if (status.toLowerCase().match(/dismissed/g))
-          status = "Cancelled";
-      else if (status.toLowerCase().match(/disposed|judgement/g))
-          status = "Done";
-      else if (status.match(/\d{2}\/\d{2}\/\d{4}/g))
-          status = "Ongoing";
-      else status = defaultValue;
-    } else {
-        status = defaultValue;
-    }
+    // if(status) {
+    //   if (status === 'Dismissed')
+    //       status = "Cancelled";
+    //   else if (status === 'Disposed')
+    //       status = "Done";
+    //   else if (status === 'Ongoing')
+    //       status = "Ongoing";
+    //   else if (status === 'To be listed')
+    //       status = "To be listed";
+    //   else status = defaultValue;
+    // } else {
+    //     status = defaultValue;
+    // }
 
     switch(status) {
-      case "Cancelled": return "proto-card-status-cancel";
+      case "Dismissed": return "proto-card-status-cancel";
       case "Ongoing": return "proto-card-status-ongoing";
-      case "Done": return "proto-card-status-done";
+      case "Disposed": return "proto-card-status-done";
+      case "To be listed": return "proto-card-status-unlisted";
       default: return "proto-card-status-none";
     }
   }

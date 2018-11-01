@@ -87,6 +87,9 @@ a {
 .dte-case-card .proto-card-status-done {
     background-color: limegreen;
 }
+.dte-case-card .proto-card-status-unlisted {
+    background-color: skyblue;
+}
 .dte-case-card .proto-card-status-none {
     background-color: black;
 }
