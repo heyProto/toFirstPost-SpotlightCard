@@ -6,33 +6,33 @@ window.ProtoGraph = window.ProtoGraph || {};
 window.ProtoGraph.Card = window.ProtoGraph.Card || {};
 
 
-ProtoGraph.Card.toDTECourtCase = function() {
+ProtoGraph.Card.toMeTooModal = function() {
     this.cardType = 'Down To Earth';
 }
 
-ProtoGraph.Card.toDTECourtCase.prototype.init = function(options) {
+ProtoGraph.Card.toMeTooModal.prototype.init = function(options) {
     this.options = options;
 }
 
-ProtoGraph.Card.toDTECourtCase.prototype.getData = function(data) {
+ProtoGraph.Card.toMeTooModal.prototype.getData = function(data) {
     return this.containerInstance.exportData();
 }
 
-ProtoGraph.Card.toDTECourtCase.prototype.renderCol7 = function(data) {
+ProtoGraph.Card.toMeTooModal.prototype.renderCol7 = function(data) {
     this.mode = 'col7';
     this.render();
 }
-ProtoGraph.Card.toDTECourtCase.prototype.renderCol4 = function(data) {
+ProtoGraph.Card.toMeTooModal.prototype.renderCol4 = function(data) {
     this.mode = 'col4';
     this.render();
 }
 
-ProtoGraph.Card.toDTECourtCase.prototype.renderScreenshot = function(data) {
+ProtoGraph.Card.toMeTooModal.prototype.renderScreenshot = function(data) {
     this.mode = 'screenshot';
     this.render();
 }
 
-ProtoGraph.Card.toDTECourtCase.prototype.render = function() {
+ProtoGraph.Card.toMeTooModal.prototype.render = function() {
    ReactDOM.render(
     <Card
       dataURL={this.options.data_url}

@@ -191,7 +191,7 @@ export default class editToCard extends React.Component {
                 <div>
                   <div className="section-title-text">Fill the form</div>
                   <div className="ui label proto-pull-right">
-                    toDTECourtCase
+                    toMeTooModal
                   </div>
                 </div>
                 <JSONSchemaForm schema={this.renderSchemaJSON()}

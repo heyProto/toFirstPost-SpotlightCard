@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import EditCard from './src/js/edit_card.jsx';
 
-ProtoGraph.Card.toDTECourtCase.prototype.getData = function(data) {
+ProtoGraph.Card.toMeTooModal.prototype.getData = function(data) {
     return this.containerInstance.exportData();
 }
 
-ProtoGraph.Card.toDTECourtCase.prototype.renderSEO = function(data) {
+ProtoGraph.Card.toMeTooModal.prototype.renderSEO = function(data) {
     this.renderMode = 'SEO';
     return this.containerInstance.renderSEO();
 }
 
-ProtoGraph.Card.toDTECourtCase.prototype.renderEdit = function(onPublishCallback) {
+ProtoGraph.Card.toMeTooModal.prototype.renderEdit = function(onPublishCallback) {
     this.mode = 'edit';
     this.onPublishCallback = onPublishCallback;
     ReactDOM.render(

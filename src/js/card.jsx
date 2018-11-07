@@ -82,38 +82,42 @@ export default class toCard extends React.Component {
         return(
             <div className="card-content-div">
             <div>  
-              <div className="single-parameter">
-                  <p>{data.summary}</p>
-              </div>
-              <div className="single-parameter">
-                <div className="parameter-label">CASE STATUS</div>
-                <div className={`card-status ${this.getCardStatus(data.case_status)}`} />
-                <p>{data.case_status ? data.case_status : 'Not available'}</p>
-              </div>
-              <div className="divider" />
               <div className="half-width-parameter">
                 <div className="single-parameter">
-                  <div className="parameter-label">SUBJECT</div>
-                  <p>{data.subject ? data.subject : 'Not available'}</p>
+                  <div className="parameter-label">COMPLAINANT'S NAME</div>
+                  <p>{data.complainant_name ? data.complainant_name : 'Not available'}</p>
                 </div>
                 <div className="single-parameter">
-                  <div className="parameter-label">LOCATION</div>
-                  <p>{data.location ? data.location : 'Not available'}</p>
+                  <div className="parameter-label">COMPLAINANT'S DESIGNATION</div>
+                  <p>{data.complainant_des ? data.complainant_des : 'Not available'}</p>
+                </div>
+                <div className="single-parameter">
+                  <div className="parameter-label">COMPLAINANT'S ORGANIZATION</div>
+                  <p>{data.complainant_org ? data.complainant_org : 'Not available'}</p>
+                </div>
+                <div className="single-parameter">
+                  <div className="parameter-label">NATURE OF HARASSMENT</div>
+                  {data.nature.map(e => {return(<p>{e}</p>)})}
                 </div>
               </div>
               <div className="half-width-parameter">
                 <div className="single-parameter">
-                  <div className="parameter-label">COURT INVOLVED</div>
-                  <p>{data.court_involved ? data.court_involved : 'Not available'}</p>
+                  <div className="parameter-label">INDUSTRY</div>
+                  <p>{data.industry ? data.industry : 'Not available'}</p>
                 </div>
                 <div className="single-parameter">
-                  <div className="parameter-label">PETITION FILING YEAR</div>
-                  <p>{data.petition_filing_year ? data.petition_filing_year : 'Not available'}</p>
+                  <div className="parameter-label">CONTEXT</div>
+                  <p>{data.context ? data.context : 'Not available'}</p>
+                </div>
+                <div className="single-parameter">
+                  <div className="parameter-label">ACTION TAKEN</div>
+                  <p>{data.action_taken ? data.action_taken : 'Unknown'}</p>
+                </div>
+                <div className="single-parameter">
+                  <div className="parameter-label">YEAR</div>
+                  <p>{data.year ? data.year : 'Not available'}</p>
                 </div>
               </div>
-              </div>
-              <div className="single-parameter content-footer">
-                {data.pdf_url && <a href={data.pdf_url} target="_blank">Case file - PDF</a>}
               </div>
             </div>
         )
@@ -122,8 +126,8 @@ export default class toCard extends React.Component {
         return(
             <div className="card-content-div">
               <div className="single-parameter">
-                  <div className="parameter-label">ACT REFERRED</div>
-                  <p>{data.act_referred ? data.act_referred : 'Not available'}</p>
+                  <div className="parameter-label">ACCOUNT EXCERPT</div>
+                  <p>{data.text ? data.text : 'Not available'}</p>
               </div>
               <div className="divider" />
               <div className="half-width-parameter">
@@ -153,15 +157,6 @@ export default class toCard extends React.Component {
                     <p>{data.petition_result ? data.petition_result : 'Not available'}</p>
                   </div>
               </div>
-              {data.compensation && <div className="half-width-parameter">
-                  <div className="single-parameter">
-                    <div className="parameter-label">COMPENSATION/FINE</div>
-                    <p>{data.compensation ? data.compensation : 'Not available'}</p>
-                  </div>
-              </div>}
-              <div className="single-parameter content-footer">
-                {data.pdf_url && <a href={data.pdf_url} target="_blank">Case file - PDF</a>}
-              </div>
             </div>
         ) 
     } 
@@ -183,7 +178,6 @@ export default class toCard extends React.Component {
     // } else {
     //     status = defaultValue;
     // }
-
     switch(status) {
       case "Dismissed": return "proto-card-status-cancel";
       case "Ongoing": return "proto-card-status-ongoing";
@@ -203,10 +197,10 @@ export default class toCard extends React.Component {
         <div className="protograph-col7-mode">
           <div className="dte-case-card">
             <div className="card-header">
-              <div className={`card-status ${this.getCardStatus(data.case_status)}`} />
-              <div className="card-date">{data.date? new Date(data.date).toLocaleDateString("en-US", {year: 'numeric', month: 'short', day: 'numeric'}) : "Date: Unknown"}</div>
+            <div className="card-title">{data.accused_name}</div>
+            <div className="card-subtitle">{data.accused_des ? data.accused_des : 'Designation'}, {data.accused_org ? data.accused_org : 'Organization'}</div>
+            <img className="card-image" src="placeholder-user.png" />
             </div>
-            <div className="card-title">{data.title.length > 150 ? data.title.substr(0,data.title.indexOf(" ",150)) + ' ...' : data.title}</div>
             <div className="card-tabs">{this.renderTabs()}</div>
             <div className="card-content">
               {this.renderTabContent(this.state.activeCounter)}
@@ -229,10 +223,10 @@ export default class toCard extends React.Component {
         <div className="protograph-col4-mode">
           <div className="dte-case-card dte-case-card-mobile">
           <div className="card-header">
-              <div className={`card-status ${this.getCardStatus(data.case_status)}`} />
-              <div className="card-date">{data.date? new Date(data.date).toLocaleDateString("en-US", {year: 'numeric', month: 'short', day: 'numeric'}) : "Date: Unknown"}</div>
+            <div className="card-title">{data.accused_name}</div>
+            <div className="card-subtitle">{data.accused_des ? data.accused_des : 'Designation'}, {data.accused_org ? data.accused_org : 'Organization'}</div>
+            <img className="card-image" src="placeholder-user.png" />
             </div>
-            <div className="card-title card-title-mobile">{data.title.length > 150 ? data.title.substr(0,data.title.indexOf(" ",150)) + ' ...' : data.title}</div>
             <div className="card-tabs card-tabs-mobile">{this.renderTabs()}</div>
             <div className="tabContent">
               <div className="tab-content">

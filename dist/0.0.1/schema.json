@@ -1,217 +1,144 @@
 {
-  "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/root.json",
+  "definitions": {},
+  "id": "http://example.com/example.json",
   "type": "object",
-  "required": [
-    "data"
-  ],
   "properties": {
     "data": {
-      "$id": "#/properties/data",
-      "type": "object",
-      "title": "DTE Case Details",
-      "required": [
-        "date",
-        "subject",
-        "location",
-        "court_involved",
-        "title",
-        "petitioner",
-        "petition_type",
-        "respondent",
-        "respondent_type",
-        "petition_filing_year",
-        "petition_result",
-        "judge_name",
-        "bench",
-        "act_referred",
-        "summary",
-        "compensation",
-        "case_status",
-        "pdf_url"
-      ],
+      "id": "/properties/data",
       "properties": {
-        "date": {
-          "$id": "#/properties/data/properties/date",
+        "accused_name": {
+          "id": "/properties/data/properties/accused_name",
           "type": "string",
-          "title": "Last Updated Date",
-          "default": "",
-          "examples": [
-            "2013-05-20"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Accused's Name"
         },
-        "subject": {
-          "$id": "#/properties/data/properties/subject",
+        "accused_handle": {
+          "id": "/properties/data/properties/accused_handle",
           "type": "string",
-          "title": "Subject",
-          "default": "",
-          "examples": [
-            "Forests"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Accused's Handle"
         },
-        "location": {
-          "$id": "#/properties/data/properties/location",
+        "accused_des": {
+          "id": "/properties/data/properties/accused_des",
           "type": "string",
-          "title": "Location",
-          "default": "",
-          "examples": [
-            "Himachal Pradesh"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Accused's Designation"
         },
-        "court_involved": {
-          "$id": "#/properties/data/properties/court_involved",
+        "accused_img": {
+          "id": "/properties/data/properties/accused_img",
           "type": "string",
-          "title": "Court involved",
-          "default": "",
-          "examples": [
-            "National Green Tribunal (NGT)"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Accused's Image URL"
         },
-        "title": {
-          "$id": "#/properties/data/properties/title",
+        "accused_url": {
+          "id": "/properties/data/properties/accused_url",
           "type": "string",
-          "title": "Title",
-          "default": "",
-          "examples": [
-            "Order of the National Green Tribunal in the matter of Shobha Dhalla Vs. State of Uttrakhand & Ors regarding construction activity in the area around Kapurthala Estate or the Savoy Hotel which have been declared as forest area"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Accused's FP URL"
         },
-        "petitioner": {
-          "$id": "#/properties/data/properties/petitioner",
+        "complainant_name": {
+          "id": "/properties/data/properties/complainant_name",
           "type": "string",
-          "title": "Petitioner",
-          "default": "",
-          "examples": [
-            "Shobha Dhalla"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Complainant's Name"
         },
-        "petition_type": {
-          "$id": "#/properties/data/properties/petition_type",
+        "complainant_handle": {
+          "id": "/properties/data/properties/complainant_handle",
           "type": "string",
-          "title": "Petitioner type",
-          "default": "",
-          "examples": [
-            "Individual"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Complainant's Handle"
         },
-        "respondent": {
-          "$id": "#/properties/data/properties/respondent",
+        "complainant_des": {
+          "id": "/properties/data/properties/complainant_des",
           "type": "string",
-          "title": "Respondent",
-          "default": "",
-          "examples": [
-            "State of Uttrakhand & Others"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Complainant's Designation"
         },
-        "respondent_type": {
-          "$id": "#/properties/data/properties/respondent_type",
+        "complainant_url": {
+          "id": "/properties/data/properties/complainant_url",
           "type": "string",
-          "title": "Respondent type",
-          "default": "",
-          "examples": [
-            "Government"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Complainant's FP URL"
         },
-        "petition_filing_year": {
-          "$id": "#/properties/data/properties/petition_filing_year",
-          "type": "integer",
-          "title": "Petition filing year",
-          "default": 0,
-          "examples": [
-            2013
-          ]
-        },
-        "petition_result": {
-          "$id": "#/properties/data/properties/petition_result",
+        "text": {
+          "id": "/properties/data/properties/text",
           "type": "string",
-          "title": "Petition result (Disposition)",
-          "default": "",
-          "examples": [
-            "In favour of the petitioner"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Text"
         },
-        "judge_name": {
-          "$id": "#/properties/data/properties/judge_name",
-          "type": "string",
-          "title": "Judge name",
-          "default": "",
-          "examples": [
-            "Swatanter Kumar, U. D. Salvi"
-          ],
-          "pattern": "^(.*)$"
+        "nature": {
+          "id": "/properties/data/properties/nature",
+          "type": "array",
+          "items": {
+            "type":"string",
+            "enum":[
+              "Unwelcome sexual advances",
+              "Groping",
+              "Forced kissing",
+              "Harassment",
+              "Persistent pursuing",
+              "Obscene behaviour",
+              "Ogling",
+              "Sexual assault",
+              "Groping/Touching without consent",
+              "Not clear",
+              "Demanding nude pictures",
+              "Obscene online behaviour",
+              "Humiliating",
+              "Stalking",
+              "Violent behaviour"
+            ]
+          },
+          "uniqueItems": "true",
+          "title": "Nature of harassment"
         },
-        "bench": {
-          "$id": "#/properties/data/properties/bench",
-          "type": "string",
-          "title": "Bench",
-          "default": "",
-          "examples": [
-            "Principal Bench - New Delhi"
-          ],
-          "pattern": "^(.*)$"
+        "year": {
+          "id": "/properties/data/properties/year",
+          "type": "number",
+          "title": "Year of Incident"
         },
-        "act_referred": {
-          "$id": "#/properties/data/properties/act_referred",
+        "industry": {
+          "id": "/properties/data/properties/industry",
           "type": "string",
-          "title": "Act referred",
-          "default": "",
-          "examples": [
-            "Urban Planning and Development Act, Protection of Tree Act, Indian Forest Act"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Industry",
+          "enum": ["News", "Journalism College", "Films", "Music", "Comedy", "Media", "Not clear"]
         },
-        "summary": {
-          "$id": "#/properties/data/properties/summary",
+        "context": {
+          "id": "/properties/data/properties/context",
           "type": "string",
-          "title": "Summary",
-          "default": "",
-          "examples": [
-            "Order of the National Green Tribunal in the matter of Shobha Dhalla Vs. State of Uttrakhand & Ors regarding construction activity in the area around Kapurthala Estate or the Savoy Hotel which have been declared as forest area"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Context",
+          "enum": ["Personal", "Professional", "Not Clear", "Not Applicable"]
+        }, 
+        "reported_on": {
+          "id": "/properties/data/properties/reported_on",
+          "type": "string",
+          "title": "Reported On",
+          "enum": ["News Media", "Social Media"]
         },
-        "compensation": {
-          "$id": "#/properties/data/properties/compensation",
+        "news_platform": {
+          "id": "/properties/data/properties/news_platform",
           "type": "string",
-          "title": "Compensation/Fine",
-          "default": "",
-          "examples": [
-            ""
-          ],
-          "pattern": "^(.*)$"
+          "title": "News Platform"
         },
-        "case_status": {
-          "$id": "#/properties/data/properties/case_status",
+        "news_url": {
+          "id": "/properties/data/properties/news_url",
           "type": "string",
-          "title": "Case status",
-          "default": "",
-          "examples": [
-            "Next Hearing 15/07/2013"
-          ],
-          "pattern": "^(.*)$"
+          "title": "News URL"
         },
-        "pdf_url": {
-          "$id": "#/properties/data/properties/pdf_url",
+        "social_platform": {
+          "id": "/properties/data/properties/source_platform",
           "type": "string",
-          "title": "PDF link",
-          "default": "",
-          "examples": [
-            "http://www.indiaenvironmentportal.org.in/files/bio-medical%20waste%20Andhra%20Pradesh%20NGT%20Judgement.pdf"
-          ],
-          "pattern": "^(.*)$"
+          "title": "Social Platform"
+        },
+        "social_url": {
+          "id": "/properties/data/properties/social_url",
+          "type": "string",
+          "title": "Social URL"
+        },
+        "action_taken": {
+          "id": "/properties/data/properties/action_taken",
+          "type": "string",
+          "title": "Action Taken"
+        },
+        "created_at": {
+          "id": "/properties/data/properties/created_at",
+          "type": "string",
+          "title": "Created At"
         }
-      }
+      },
+      "title": "Card Data",
+      "type": "object"
     }
   }
 }

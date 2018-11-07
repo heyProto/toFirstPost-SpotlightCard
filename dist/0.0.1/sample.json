@@ -1,23 +1,25 @@
 {
-  "data": {
-    "date": "2017-12-12",
-    "subject": "Governance & Institutions",
-    "location": "India",
-    "court_involved": "Supreme Court",
-    "title": "Supreme Court order regarding inhuman conditions in 1382 prisons of India,12/12/2017",
-    "petitioner": "",
-    "petition_type": "",
-    "respondent": "",
-    "respondent_type": "",
-    "petition_filing_year": "",
-    "petition_result": "",
-    "judge_name": "",
-    "bench": "",
-    "act_referred": "",
-    "summary": "Supreme Court directs the Ministry of Home Affairs to have a meeting with the Directors General and Inspectors General of Prison of all the State Governments and Union Territories to see the feasibility of establishing open prisons. The Ministry of Home Affairs will send a communication to the concerned authorities in the State Governments and Union Territories asking for their response to the idea of open prisons – whether they are willing to set up open prisons and the manner in which the open prisons could be operated.",
-    "compensation": "",
-    "case_status": "",
-    "case_status_comments": "",
-    "pdf_url": "http://www.indiaenvironmentportal.org.in/files/inhuman%20conditions%20prisons%20India%20Supreme%20Court%20Order.pdf"
-  }
+    "data": {
+        "news_url": "https://scroll.in/article/898211/11-women-recall-how-journalist-cp-surendran-sexually-harassed-them-he-dismisses-them-as-lynch-mob",
+        "reported_on": "News Media",
+        "news_platform": "Scroll",
+        "text": "She accepted his invitation to take a walk when he suddenly came very close to her and used a pick-up line on her in the middle of a normal conversation. Majumdar goes on to describe how later in the evening she returned to her hotel room and found out that Surendran’s room was next to hers with a shared terrace space where she bumped into him again. He suggested that they move into his room. When she declined, he massaged her neck and shoulders despite her protests.",
+        "created_at": "14/10/2018 20:47:09",
+        "social_platform": "Scroll.in",
+        "social_url": "https://scroll.in/article/898211/11-women-recall-how-journalist-cp-surendran-sexually-harassed-them-he-dismisses-them-as-lynch-mob",
+        "accused_name": "C P Surendran",
+        "accused_handle": "",
+        "accused_des": "",
+        "accused_img": "placeholder-user.png",
+        "accused_url": "",
+        "complainant_name": "Anushree Majumdar",
+        "complainant_handle": "",
+        "complainant_des": "Interns",
+        "complainant_url": "",
+        "year": 2016,
+        "industry": "News",
+        "context": "Professional",
+        "action_taken": "",
+        "nature": ["Groping", "Unwelcome sexual advances"]
+    }
 }
